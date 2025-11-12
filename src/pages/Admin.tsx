@@ -834,7 +834,8 @@ function AdminPanel() {
     setIsAdding(false);
     setSelectedProduct(null);
     setPreviewProduct(null);
-    setActiveTab('products');
+    // Don't change activeTab when closing dialog - stay on current tab
+    // setActiveTab('products');
     setFormData({
       name: '',
       description: '',
@@ -850,6 +851,8 @@ function AdminPanel() {
       enabledPlans: [],
       pricingPlans: [],
     });
+    setVideoUrls([]);
+    setImageUrls([]);
   };
 
   const resetTestimonialForm = () => {
@@ -992,10 +995,11 @@ function AdminPanel() {
       </Tabs>
 
       {/* Product Form Dialog */}
-      <Dialog open={isAdding || isEditing} onOpenChange={() => {
-        setIsAdding(false);
-        setIsEditing(false);
-        setSelectedProduct(null);
+      <Dialog open={isAdding || isEditing} onOpenChange={(open) => {
+        if (!open) {
+          // Only reset when closing (open is false)
+          resetForm();
+        }
       }}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto mx-4">
           <DialogHeader>
@@ -1016,9 +1020,7 @@ function AdminPanel() {
             loading={loading}
             setPreviewProduct={setPreviewProduct}
             resetForm={() => {
-              setIsAdding(false);
-              setIsEditing(false);
-              setSelectedProduct(null);
+              resetForm();
             }}
             categories={categories}
             videoUrls={videoUrls}
