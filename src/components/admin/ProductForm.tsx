@@ -204,7 +204,7 @@ export const ProductForm = ({
             <div className="space-y-2">
               <Label htmlFor="price" className="flex items-center gap-2">
                 <DollarSign className="w-4 h-4" />
-                Price (PKR) *
+                Price (NGN) *
               </Label>
               <Input
                 id="price"
@@ -219,7 +219,7 @@ export const ProductForm = ({
             <div className="space-y-2">
               <Label htmlFor="original_price" className="flex items-center gap-2">
                 <DollarSign className="w-4 h-4" />
-                Original Price (PKR)
+                Original Price (NGN)
               </Label>
               <Input
                 id="original_price"

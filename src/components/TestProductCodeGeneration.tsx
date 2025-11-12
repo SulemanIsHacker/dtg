@@ -41,7 +41,7 @@ export const TestProductCodeGeneration = () => {
             price: 1000
           }
         ],
-        p_currency: 'PKR'
+        p_currency: 'NGN'
       });
 
       if (error) {

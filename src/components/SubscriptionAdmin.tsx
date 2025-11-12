@@ -399,7 +399,7 @@ export const SubscriptionAdmin = () => {
         custom_price: '',
         username: '',
         password: '',
-        currency: 'PKR'
+        currency: 'NGN'
       });
       fetchSubscriptions();
     } catch (error) {

@@ -112,7 +112,7 @@ function ProductForm({
             id="original_price"
             value={formData.original_price || ''}
             onChange={(e) => handleInputChange('original_price', e.target.value)}
-            placeholder="PKR 2000"
+            placeholder="NGN 2000"
           />
         </div>
         <div>
@@ -178,7 +178,7 @@ function ProductForm({
                           
                           handleInputChange('pricingPlans', updatedPlans);
                         }}
-                        placeholder="PKR 500"
+                        placeholder="NGN 500"
                       />
                     </div>
                     <div>
@@ -200,7 +200,7 @@ function ProductForm({
                           
                           handleInputChange('pricingPlans', updatedPlans);
                         }}
-                        placeholder="PKR 5000"
+                        placeholder="NGN 5000"
                       />
                     </div>
                   </div>
