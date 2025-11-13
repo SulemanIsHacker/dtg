@@ -506,32 +506,53 @@ function AdminPanel() {
   };
 
   const startEdit = async (product: Product) => {
+    // Open the dialog immediately for better UX
+    setIsEditing(true);
     setSelectedProduct(product);
     
-    // Fetch pricing plans for this product
-    const { data: pricingPlans } = await supabase
-      .from('pricing_plans')
-      .select('*')
-      .eq('product_id', product.id);
-    
-    const enabledPlans = (pricingPlans || []).map(p => p.plan_type);
-    
-    setFormData({
-      name: product.name,
-      description: product.description,
-      detailed_description: product.detailed_description,
-      price: product.price,
-      original_price: product.original_price,
-      category: product.category,
-      rating: product.rating,
-      features: [...product.features],
-      main_image_url: product.main_image_url,
-      video_url: (product as any).video_url || '',
-      video_thumbnail_url: (product as any).video_thumbnail_url || '',
-      enabledPlans,
-      pricingPlans: pricingPlans || [],
-    });
-    setIsEditing(true);
+    try {
+      // Fetch pricing plans for this product
+      const { data: pricingPlans } = await supabase
+        .from('pricing_plans')
+        .select('*')
+        .eq('product_id', product.id);
+      
+      const enabledPlans = (pricingPlans || []).map(p => p.plan_type);
+      
+      setFormData({
+        name: product.name,
+        description: product.description,
+        detailed_description: product.detailed_description,
+        price: product.price,
+        original_price: product.original_price,
+        category: product.category,
+        rating: product.rating,
+        features: [...product.features],
+        main_image_url: product.main_image_url,
+        video_url: (product as any).video_url || '',
+        video_thumbnail_url: (product as any).video_thumbnail_url || '',
+        enabledPlans,
+        pricingPlans: pricingPlans || [],
+      });
+    } catch (e) {
+      // If fetching plans fails, still allow editing base product fields
+      setFormData({
+        name: product.name,
+        description: product.description,
+        detailed_description: product.detailed_description,
+        price: product.price,
+        original_price: product.original_price,
+        category: product.category,
+        rating: product.rating,
+        features: [...product.features],
+        main_image_url: product.main_image_url,
+        video_url: (product as any).video_url || '',
+        video_thumbnail_url: (product as any).video_thumbnail_url || '',
+        enabledPlans: [],
+        pricingPlans: [],
+      });
+      console.warn('Failed to fetch pricing plans for product edit; continuing without plans.', e);
+    }
     // Don't change activeTab - we're using a dialog now
   };
 
