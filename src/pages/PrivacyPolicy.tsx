@@ -425,7 +425,8 @@ const PrivacyPolicy = () => {
                     <h3 className="font-semibold mb-3">Contact Information</h3>
                     <div className="space-y-2 text-sm">
                       <p><strong>Email:</strong> privacy@toolsystore.com</p>
-                      <p><strong>WhatsApp:</strong> +234 814 198 8239</p>
+                      <p><strong>WhatsApp (Main):</strong> +234 814 198 8239</p>
+                      <p><strong>WhatsApp (Backup):</strong> +234 9139063677</p>
                       <p><strong>Address:</strong> DAILYTECH TOOLS SOLUTIONS, Pakistan</p>
                     </div>
                   </div>

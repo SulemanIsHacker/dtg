@@ -776,7 +776,7 @@ const RefundPolicy = () => {
                   <Phone className="w-8 h-8 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
-                <p className="text-muted-foreground text-sm mb-4">Mon-Fri 9AM-6PM</p>
+                <p className="text-muted-foreground text-sm mb-4">Our support team is available Monday to Friday 9 AM to 6 PM (WAT). For urgent issues, WhatsApp support is available 24/7.</p>
                 <Button variant="outline" className="w-full">
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now

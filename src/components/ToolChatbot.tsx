@@ -98,15 +98,15 @@ const faqData = [
     questions: [
       {
         question: 'What are your payment details?',
-        answer: 'We accept EasyPaisa payments. Send payment to +234 814 198 8239 and share the transaction receipt via WhatsApp for instant confirmation.'
+        answer: 'We accept bank transfers to Kuda Microfinance Bank. Account Number: 3002924886, Account Name: DAILYTECH GLOBE COMPANY LTD. Share the transaction receipt via WhatsApp for instant confirmation.'
       },
       {
-        question: 'How long do EasyPaisa payments take?',
-        answer: 'EasyPaisa payments are processed instantly. You\'ll receive confirmation within minutes after sharing the transaction receipt.'
+        question: 'How long do bank transfers take?',
+        answer: 'Bank transfers are processed instantly. You\'ll receive confirmation within minutes after sharing the transaction receipt via WhatsApp.'
       },
       {
-        question: 'Is EasyPaisa payment safe?',
-        answer: 'Yes, EasyPaisa payments are completely safe and secure. We verify all transactions and provide instant confirmation.'
+        question: 'Is bank transfer payment safe?',
+        answer: 'Yes, bank transfers are completely safe and secure. We verify all transactions and provide instant confirmation.'
       }
     ]
   },
@@ -136,11 +136,11 @@ const faqData = [
     questions: [
       {
         question: 'How can I contact support?',
-        answer: 'You can reach us via WhatsApp (+234 814 198 8239), email (support@toolsy.com), or through our live chat. We respond within 2 hours during business hours.'
+        answer: 'You can reach us via WhatsApp (+234 814 198 8239), email (support@toolsy.com), or through our live chat. We respond within 2 hours during business hours. For backup support, you can also contact us at +234 9139063677.'
       },
       {
         question: 'What are your business hours?',
-        answer: 'Our support team is available Monday to Friday, 9 AM to 6 PM (PKT). For urgent issues, WhatsApp support is available 24/7.'
+        answer: 'Our support team is available Monday to Friday 9 AM to 6 PM (WAT). For urgent issues, WhatsApp support is available 24/7.'
       },
       {
         question: 'Do you offer technical support?',
@@ -154,22 +154,23 @@ const bankAccountInfo = {
   title: 'Payment Information',
   accounts: [
     {
-      bank: 'EasyPaisa',
-      accountTitle: 'Rameen Shahzad',
-      accountNumber: '+234 814 198 8239',
+      bank: 'Kuda Microfinance Bank',
+      accountTitle: 'DAILYTECH GLOBE COMPANY LTD',
+      accountNumber: '3002924886',
       iban: 'N/A',
-      branch: 'Mobile Payment'
+      branch: 'N/A'
     }
   ],
-  note: 'For EasyPaisa payments, please send payment to the number above and share the transaction receipt via WhatsApp.'
+  note: 'For bank transfers, please send payment to the account above and share the transaction receipt via WhatsApp for instant confirmation.'
 };
 
 const contactInfo = {
   title: 'Contact Information',
   details: [
-    { icon: '📱', label: 'WhatsApp', value: '+234 814 198 8239', link: 'https://wa.me/2348141988239' },
+    { icon: '📱', label: 'WhatsApp (Main)', value: '+234 814 198 8239', link: 'https://wa.me/2348141988239' },
+    { icon: '📱', label: 'WhatsApp (Backup)', value: '+234 9139063677', link: 'https://wa.me/2349139063677' },
     { icon: '📧', label: 'Email', value: 'support@toolsy.com', link: 'mailto:support@toolsy.com' },
-    { icon: '🕒', label: 'Business Hours', value: 'Mon-Fri: 9 AM - 6 PM (PKT)' },
+    { icon: '🕒', label: 'Business Hours', value: 'Our support team is available Monday to Friday 9 AM to 6 PM (WAT). For urgent issues, WhatsApp support is available 24/7.' },
     { icon: '📍', label: 'Location', value: 'Lahore, Pakistan' }
   ]
 };

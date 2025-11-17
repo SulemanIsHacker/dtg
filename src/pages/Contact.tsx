@@ -50,20 +50,52 @@ const Contact = () => {
         {/* Contact Methods */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
               <Card className="text-center">
                 <CardHeader>
                   <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <MessageCircle className="w-8 h-8 text-green-500" />
                   </div>
-                  <CardTitle>WhatsApp Support</CardTitle>
-                  <CardDescription>Instant support via WhatsApp</CardDescription>
+                  <CardTitle>WhatsApp Support (Main)</CardTitle>
+                  <CardDescription>Primary support line</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    +234 814 198 8239
+                  </p>
                   <p className="text-sm text-muted-foreground mb-4">
                     Get instant help and support for all your tool-related questions.
                   </p>
                   <Button onClick={handleWhatsAppContact} className="w-full bg-green-600 hover:bg-green-700">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Chat on WhatsApp
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MessageCircle className="w-8 h-8 text-green-400" />
+                  </div>
+                  <CardTitle>WhatsApp Support (Backup)</CardTitle>
+                  <CardDescription>Alternative support line</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    +234 9139063677
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Use this number if the main line is busy.
+                  </p>
+                  <Button 
+                    onClick={() => {
+                      const message = "Hi! I'd like to get in touch about your premium tools. Can you help me?";
+                      window.open(`https://wa.me/2349139063677?text=${encodeURIComponent(message)}`, '_blank');
+                    }} 
+                    variant="outline" 
+                    className="w-full border-green-400 text-green-600 hover:bg-green-50"
+                  >
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Chat on WhatsApp
                   </Button>
@@ -197,10 +229,7 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold">Business Hours</h3>
               </div>
               <p className="text-muted-foreground">
-                WhatsApp Support: 24/7 Available
-              </p>
-              <p className="text-muted-foreground">
-                Email Support: Monday - Friday, 9 AM - 6 PM
+                Our support team is available Monday to Friday 9 AM to 6 PM (WAT). For urgent issues, WhatsApp support is available 24/7.
               </p>
             </div>
           </div>
